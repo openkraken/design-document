@@ -12,29 +12,28 @@
 
 在尝试提升 Web 技术应用的首次启动性能，业界有很多提升的手段，这些手段都可以用一张图来概括。
 
-![image-20220629202153927](https://andycall.oss-cn-beijing.aliyuncs.com/images/image-20220629202153927.png)
+![render-lifetimes](../images/render-lifetimes.png)
 
 一个页面，从初始化到用户可见，就需要完成以上的五个阶段。目前的优化方案，都是围绕其中一个或者两个阶段来进行优化。
 
 在介绍新的优化方案之前，可以先来看看原生客户端应用是如何初始化页面的。
 
-![image-20220629202354895](https://andycall.oss-cn-beijing.aliyuncs.com/images/image-20220629202354895.png)
+![render-lifetime-original](../images/render-lifetime-original.png)
 
 一个纯原生开发的应用，在每一个阶段，都有着对 Web 应用形成碾压的优势。
 
 所以现在针对 Web 的所有性能优化方案，都远不足以让 Web 的体验追平原生客户端技术。
 
 
-
 ## 容器化方案设计
 
 容器化，就是在一个已经完整初始化的渲染引擎上，虚拟出一个具备隔离能力的容器。它的思路源自 Docker 的设计思路，即在一个应用内，虚拟出操作系统所提供的 API ，从而可以用更加轻量的方式，实现一个运行环境。
 
-![img](https://wiki.aquasec.com/download/attachments/2854889/Container_VM_Implementation.png?version=1&modificationDate=1520172703952&api=v2)
+![img](../images/docker-arch.png)
 
 所以我们基于这样的思路，实现一个渲染引擎版本的容器：
 
-![image](https://andycall.oss-cn-beijing.aliyuncs.com/images/20220419145556.jpg)
+![image](../images/kraken-arch.jpeg)
 
 要想实现这个容器，就需要两个必备的条件：
 
@@ -71,7 +70,7 @@ W3C Group 也提供了对应的解决方案 —— [ShadowDOM](https://developer
 
 ## 采用容器化方案的流水线
 
-![image-20220629204807718](https://andycall.oss-cn-beijing.aliyuncs.com/images/image-20220629204807718.png)
+![image-20220629204807718](../images/render-lifetime-optimzed.png)
 
 ## 结论
 

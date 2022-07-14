@@ -12,13 +12,13 @@ The concept of containerization introduced this time is a way to be closer to th
 
 When trying to improve the first-time startup performance of web technology applications, there are many ways to improve the industry, which can be summarized in one picture.
 
-![image-20220629202153927](https://andycall.oss-cn-beijing.aliyuncs.com/images/image-20220629202153927.png)
+![render-lifetimes](../images/render-lifetimes.png)
 
 A page, from initialization to user visibility, needs to complete the above five stages. The current optimization scheme is optimized around one or two stages.
 
 Before introducing the new optimization solution, let's take a look at how the native client application initializes the page.
 
-![image-20220629202354895](https://andycall.oss-cn-beijing.aliyuncs.com/images/image-20220629202354895.png)
+![render-lifetime-original](../images/render-lifetime-original.png)
 
 A purely natively developed application has the advantage of crushing web applications at every stage.
 
@@ -30,11 +30,11 @@ Therefore, all the performance optimization solutions for the Web are far from e
 
 Containerization is to virtualize a container with isolation capability on a fully initialized rendering engine. Its idea comes from the design idea of ​​Docker, that is, in an application, the API provided by the operating system is virtualized, so that a running environment can be realized in a more lightweight way.
 
-![img](https://wiki.aquasec.com/download/attachments/2854889/Container_VM_Implementation.png?version=1&modificationDate=1520172703952&api=v2)
+![img](../images/docker-arch.png)
 
 So we implement a rendering engine version of the container based on this idea:
 
-![image](https://andycall.oss-cn-beijing.aliyuncs.com/images/20220419145556.jpg)
+![image](../images/kraken-arch.jpeg)
 
 To implement this container, two prerequisites are required:
 
@@ -71,7 +71,7 @@ Therefore, here, we need to make a further evolution on the basis of the standar
 
 ## Containerized pipelines
 
-![image-20220629204807718](https://andycall.oss-cn-beijing.aliyuncs.com/images/image-20220629204807718.png)
+![image-20220629204807718](../images/render-lifetime-optimzed.png)
 
 ## in conclusion
 
