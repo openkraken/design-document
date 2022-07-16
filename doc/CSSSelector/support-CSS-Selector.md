@@ -21,8 +21,8 @@ At present, Kraken only supports the ClassSelector in the basic selector, and do
         - ,
     - Combinator
         - " "
-        - >
-        - +
+        - \>
+        - \+
         - _
     - Attribute
         - [attribute]

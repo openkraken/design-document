@@ -6,7 +6,7 @@
 
 ## 背景
 
-目前 Kraken 仅支持了基本选择器中的 ClassSelector 语法，还未支持其他简单选择器以及更复杂的 combinators、pseudo，导致在使用 Kraken 适配已有页面时经常需要重新梳理 CSS.****
+目前 Kraken 仅支持了基本选择器中的 ClassSelector 语法，还未支持其他简单选择器以及更复杂的 combinators、pseudo，导致在使用 Kraken 适配已有页面时经常需要重新梳理 CSS.
 
 ## 解决方案
 
@@ -23,8 +23,8 @@
         - ,
     - Combinator
         - " "
-        - >
-        - +
+        - \>
+        - \+
         - _
     - Attribute
         - [attribute]
